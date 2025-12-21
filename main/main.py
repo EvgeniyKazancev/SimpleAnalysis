@@ -1,0 +1,27 @@
+import randomData
+import pandas as pd
+import analyzeDataset
+from visual  import separate_win
+import create_dataframe
+
+def main():
+   # randomData.save_series()
+   # data = pd.read_csv('generate_series.csv', index_col=0).squeeze()
+
+    series = randomData.save_series()
+    analysis = analyzeDataset.Analysis(series)
+
+    print("=" * 50)
+    print("                 Анализ DataSet")
+    print("=" * 50)
+    print("Минимальное значение:", analysis.min_num())
+    print("Максимальное значение:", analysis.max_num())
+    print("Сумма всех чисел: ", analysis.sum_num())
+    print("Количество повторяющихся значений: ", analysis.duplicate_values())
+    print("Среднеквадратическое отклонение: %.2f" % analysis.std_calculate())
+
+    separate_win(series)
+    print(create_dataframe.create_df(series))
+
+if __name__ == "__main__":
+    main()
