@@ -4,6 +4,8 @@ import analyzeDataset
 from visual  import separate_win
 import create_dataframe
 
+
+
 def main():
    # randomData.save_series()
    # data = pd.read_csv('generate_series.csv', index_col=0).squeeze()
@@ -20,8 +22,11 @@ def main():
     print("Количество повторяющихся значений: ", analysis.duplicate_values())
     print("Среднеквадратическое отклонение: %.2f" % analysis.std_calculate())
 
+
+    create_dataframe.create_df(series)
+
     separate_win(series)
-    print(create_dataframe.create_df(series))
+
 
 if __name__ == "__main__":
     main()

@@ -32,8 +32,3 @@ class Analysis:
 
         return  std_deviation
 
-    def sorted_series(self):
-        return sorted(self.data)
-
-    def sorted_reversed(self):
-        return reversed(sorted(self.data))
