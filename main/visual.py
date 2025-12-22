@@ -1,8 +1,6 @@
-import pandas as pd
+
 import matplotlib.pyplot as plt
-import create_dataframe
-import numpy as np
-from matplotlib.lines import lineStyles
+
 
 
 def line_graf(series):
@@ -17,7 +15,7 @@ def histogram(series):
 
     new_series = (series / 100).round() * 100
 
-    plt.hist(new_series, bins=5, color='y', edgecolor='black')
+    plt.hist(new_series, bins=5, color='b', edgecolor='black')
     plt.title("Гистограмма")
     plt.xlabel("Значения")
     plt.ylabel("Частота")
@@ -31,9 +29,9 @@ def graf(series):
     plt.plot(sort_series, marker='.', color='r', linestyle='-')
     plt.plot(revers_sort_series, marker='.', color='g', linestyle='-')
 
-    plt.plot(sort_series, marker='.', color='r', linestyle='-',
+    plt.plot(sort_series, marker='.', color='y', linestyle='-',
              label='По возрастанию ')
-    plt.plot(revers_sort_series, marker='.', color='gray', linestyle='-',
+    plt.plot(revers_sort_series, marker='.', color='g', linestyle='-',
              label='По убыванию ')
     plt.xlabel('Длина')
     plt.ylabel('Значения')
