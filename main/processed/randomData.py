@@ -7,7 +7,7 @@ def save_series():
     series = pd.Series(np.random.randint(-10000, 10000, 1000))
 
     # Сохранение данных в csv файл для дальнейшего использования
-    #series.to_csv('generate_series.csv', header=['Значения'])
+    series.to_csv('generated/generate_series.csv', header=['Значения'])
     return series
 
 

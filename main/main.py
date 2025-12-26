@@ -1,9 +1,5 @@
-import randomData
-import pandas as pd
-import analyzeDataset
-from visual  import separate_win
-import create_dataframe
-
+from processed import analyzeDataset, randomData, create_dataframe
+from visual.visual import separate_win
 
 
 def main():

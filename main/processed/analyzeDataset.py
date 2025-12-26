@@ -4,7 +4,7 @@ import pandas as pd
 
 
 class Analysis:
-
+    """Класс анализа данных из обьекта Series"""
     def __init__(self, data):
         if not isinstance(data, pd.Series):
             raise ValueError("Должно быть pandas Series")
