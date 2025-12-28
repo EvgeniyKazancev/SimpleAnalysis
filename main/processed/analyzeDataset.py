@@ -1,5 +1,4 @@
-from multiprocessing.reduction import duplicate
-import math
+
 import pandas as pd
 
 
@@ -9,24 +8,27 @@ class Analysis:
         if not isinstance(data, pd.Series):
             raise ValueError("Должно быть pandas Series")
         self.data = data
-
+    # Находим минимальное значение
     def min_num(self):
 
         return min(self.data)
 
+    # Находим максимальное значение
     def max_num(self):
         return max(self.data)
 
+    # Находим минимальное значение
     def sum_num(self):
         return sum(self.data)
 
+    # Находим количество повторяющихся элементов
     def duplicate_values(self):
-        duplicates = self.data[self.data.duplicated(keep=False)]
-        if not duplicates.empty:
-            return 0
+        value_counts = self.data.value_counts()
+        duplicates = value_counts[value_counts > 1]
 
-        return len(duplicates.unique())
 
+        return len(duplicates)
+     # Вычисление среднеквадратического отклонения
     def std_calculate(self):
         std_deviation = self.data.std()
 

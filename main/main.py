@@ -1,13 +1,14 @@
 from processed import analyzeDataset, randomData, create_dataframe
 from visual.visual import separate_win
-
+from clean_data import cleanData
 
 def main():
    # randomData.save_series()
    # data = pd.read_csv('generate_series.csv', index_col=0).squeeze()
 
     series = randomData.save_series()
-    analysis = analyzeDataset.Analysis(series)
+    series_clean = cleanData.clean_series(series)
+    analysis = analyzeDataset.Analysis(series_clean)
 
     print("=" * 50)
     print("                 Анализ DataSet")
