@@ -20,7 +20,7 @@ def main():
     print("Среднеквадратическое отклонение: %.2f" % analysis.std_calculate())
 
 
-    create_dataframe.create_df(series)
+    print(create_dataframe.create_df(series))
 
     separate_win(series)
 
